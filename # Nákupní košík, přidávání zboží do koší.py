@@ -29,9 +29,10 @@ print(f"""Vitejte u našeho nakupního košíku!
 {oddelovac}
 {nabidka}""")
 
-while True:
-    zbozi = input("Zboží: ")
-    if zbozi not in potraviny.keys():
+while zbozi := input("Zadávej zboží(pokud nechceš stiskni 'q'): "):
+    if zbozi == "q":
+        break
+    elif zbozi not in potraviny.keys():
         print(f"Zboží {zbozi} není v nabídce.")
         continue
     elif zbozi not in kosik:
@@ -43,12 +44,7 @@ while True:
             continue
         kosik[zbozi] = (kosik[zbozi][0]), int(kosik[zbozi][1]) + 1
         potraviny[zbozi] = (potraviny[zbozi][0]), int(potraviny[zbozi][1]) - 1
-    pokracovani = input("Chceš pokračovat v nákupu: ")
-    if pokracovani == "a":
-        continue
-    else:
-        break
- 
+
 print(f"""{oddelovac}
 V košíku máš: {kosik}
 {oddelovac}""")

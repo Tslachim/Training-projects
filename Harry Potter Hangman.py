@@ -16,11 +16,12 @@ random_word = random.choice(names)
 print(random_word)
 
 #Podrtžítka (z kolika to bude pismen)
-hidden_word = [len(random_word) * "_"]
+hidden_word = len(random_word) * "_"
 
 letter = input("Enter a possible letter:\n").lower()
 for index in range(0, len(random_word)):
-    if letter == random_word[index]:
+    if letter in random_word[index]:
         hidden_word[index] = letter
+        continue
 
 print(hidden_word)
