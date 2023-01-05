@@ -29,7 +29,7 @@ print(f"""Vitejte u našeho nakupního košíku!
 {oddelovac}
 {nabidka}""")
 
-while zbozi := input("Zadávej zboží(pokud nechceš stiskni 'q'): "):
+while zbozi := input("Zadávej zboží(pokud chceš ukončit napiš 'q'): "):
     if zbozi == "q":
         break
     elif zbozi not in potraviny.keys():
