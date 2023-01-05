@@ -22,17 +22,15 @@ nabidka = """
 | jogurt    |    10,-  |
 | chleb     |    20,-  |
 | jablko    |    10,-  |
-| pomenrac  |    15,-  |
+| pomeranc  |    15,-  |
 +-----------+----------+
 """
 print(f"""Vitejte u našeho nakupního košíku!
 {oddelovac}
 {nabidka}""")
 
-while zbozi := input("Zadávej zboží(pokud chceš ukončit napiš 'q'): "):
-    if zbozi == "q":
-        break
-    elif zbozi not in potraviny.keys():
+while (zbozi := input("Zadávej zboží(pokud chceš ukončit napiš 'q'): ")) != "q":
+    if zbozi not in potraviny.keys():
         print(f"Zboží {zbozi} není v nabídce.")
         continue
     elif zbozi not in kosik:
