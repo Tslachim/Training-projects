@@ -12,7 +12,7 @@ names = ("Hermione Granger", "Ronald weasley", "Fred Weaslye", "George Weasley",
 "Gregory Goyle", "Neville Longbottom", "Draco Malfoy", "Igor Karkaroff", "Peter Pettigrew",
 "Lucius Malfoy", "Bellatrix Lestrange", "Barty Crouch Jr.", "Tom Marvolo Riddle - Lord Voldemort")
 
-sepparator = "=" * 30
+sepparator = "=" * 42
 random_word = random.choice(names).lower()
 hidden_word = []
 attemp = 6
@@ -21,11 +21,11 @@ for i in random_word:
     hidden_word.append("_")
 
 print(f"""{sepparator}
-Welcome to the hangman game
+Welcome to the Harry Potter hangman game!
 {sepparator}""")
 
 print(stages[6])
-print("".join(hidden_word), "\n")
+print(f"""Here is your hidden word:\n {"".join(hidden_word)}, \n""")
 
 while "_" in hidden_word:
     letter = input("Enter a possible letter(or space):\n").lower()
@@ -49,6 +49,3 @@ if "".join(hidden_word) == random_word:
 {20*"="}
     You win!
 {20*"="}""")
-
-# doplnit uvod
-# když prohraješ napiš slovo
