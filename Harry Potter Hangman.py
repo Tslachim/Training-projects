@@ -1,9 +1,7 @@
 # Hangman
+
 import random
 from hphprint import stages
-
-
-#generování náhodného slova
 
 names = ("Hermione Granger", "Ronald weasley", "Fred Weaslye", "George Weasley",
 "Ginevra Weasley", "Molly Weasley", "Arthur Weasley", "Percy Weasley", "Harry Potter",
@@ -14,13 +12,17 @@ names = ("Hermione Granger", "Ronald weasley", "Fred Weaslye", "George Weasley",
 "Gregory Goyle", "Neville Longbottom", "Draco Malfoy", "Igor Karkaroff", "Peter Pettigrew",
 "Lucius Malfoy", "Bellatrix Lestrange", "Barty Crouch Jr.", "Tom Marvolo Riddle - Lord Voldemort")
 
+sepparator = "=" * 30
 random_word = random.choice(names).lower()
-
 hidden_word = []
 attemp = 6
 
 for i in random_word:
     hidden_word.append("_")
+
+print(f"""{sepparator}
+Welcome to the hangman game
+{sepparator}""")
 
 print(stages[6])
 print("".join(hidden_word), "\n")
@@ -31,7 +33,7 @@ while "_" in hidden_word:
         attemp -= 1
         print(stages[int(attemp)])
         if attemp == 0:
-            print("Game over!")
+            print(f"Game over! Hidden word was: {random_word}")
             break
             
     else:
@@ -47,3 +49,6 @@ if "".join(hidden_word) == random_word:
 {20*"="}
     You win!
 {20*"="}""")
+
+# doplnit uvod
+# když prohraješ napiš slovo
