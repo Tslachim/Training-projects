@@ -1,1 +1,1 @@
-# Training-projects
+Tréninkové projekty, jednoduché, cvičné úkoly 
